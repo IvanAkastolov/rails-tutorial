@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {maximum: 50}
 
-  VALID_EMAIL_REGEX = /\A[a-z+.\-_]+@[a-z\-.]+\.[a-z]+\z/i
+  VALID_EMAIL_REGEX = /\A[a-z0-9+.\-_]+@[a-z\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
 
   has_secure_password
